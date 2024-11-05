@@ -1,6 +1,5 @@
 # EX01 Developing a Simple Webserver
-
-## Date:25.09.24 
+## Date:25.9.24
 
 ## AIM:
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
@@ -22,35 +21,55 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
-
 ```
-import platform
 from http.server import HTTPServer,BaseHTTPRequestHandler
 
-system_name = platform.system()
-node_name = platform.node()
-release = platform.release()
-version = platform.version()
-machine = platform.machine()
-processor = platform.processor()
-
 content='''
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My System Configuration</title>
+<title> My Web Server</title>
 </head>
 <body>
-    <h1>My System Configuration</h1>
-    <ul>
-        <li>'''+system_name+'''</li>
-        <li>'''+node_name+'''</li>
-        <li>'''+release+'''</li>  
-        <li>'''+version+'''</li>  
-        <li>'''+machine+'''</li>  
-        <li>'''+processor+'''</li>  
-    </ul>
+<h1><center>My Laptop Configuration Details</center></h1>
+   <table border="1" cellpadding="10" align="center">
+        <tr>
+            <th bgcolor="yellow">Specification</th>
+            <th bgcolor="red">Details</th>
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td>Lenovo ThinkPad i5</td>
+        </tr>
+        <tr>
+            <td>Processor</td>
+            <td>Intel Core i5</td>
+        </tr>
+        <tr>
+            <td>RAM</td>
+            <td>8GB</td>
+        </tr>
+        <tr>
+            <td>Storage</td>a
+            <td>256GB SSD</td>
+        </tr>
+        <tr>
+            <td>Graphics</td>
+            <td>Integrated Intel UHD Graphics</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>14-inch FHD (1920 x 1080)</td>
+        </tr>
+        <tr>
+            <td>Operating System</td>
+            <td>Windows 10</td>
+        </tr>
+        <tr>
+            <td>Colours available</td>
+            <td>Black,White,Grey</td>
+        </tr>
+    </table>
 </body>
 </html>
 '''
@@ -69,12 +88,10 @@ httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
 ```
 
-
 ## OUTPUT:
+![Screenshot 2024-10-26 133653](https://github.com/user-attachments/assets/bd1ed766-453f-49d5-a4d4-ecd94ae0fc7c)
 
-![alt text](env.png)
-![alt text](op.png)
-
+![Screenshot 2024-10-26 133645](https://github.com/user-attachments/assets/3aa36318-b81c-416f-832a-a6479612c10e)
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
